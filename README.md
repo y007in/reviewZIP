@@ -16,8 +16,6 @@ npm install
 npm run dev
 ```
 
-[http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
-
 ## 스크립트
 
 - `npm run dev` — 개발 서버 실행
