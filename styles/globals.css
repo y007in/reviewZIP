@@ -1,0 +1,45 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  /* 색상 */
+  --color-paper: #faf7f1; /* --bg */
+  --color-paper-raised: #f1ead9; /* --bg-raised */
+  --color-card: #ffffff; /* --bg-card */
+  --color-ink: #1b1a17; /* --ink */
+  --color-ink-soft: #726b5e; /* --ink-soft */
+  --color-ink-faint: #a69c87; /* --ink-faint */
+  --color-accent: #b3312c; /* 시안에서는 --mint였지만 실제 값은 시네마 레드 */
+  --color-accent-dim: rgba(179, 49, 44, 0.08);
+  --color-accent-dim-2: rgba(179, 49, 44, 0.14);
+  --color-line: #dcd3be;
+  --color-line-soft: #e6dfce;
+  --color-warn: #8a6d3b; /* --danger (중단 상태 등 오커색) */
+
+  /* 폰트 */
+  --font-sans: var(--font-pretendard), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+
+  /* 반경 */
+  --radius-card: 14px;
+  --radius-pill: 999px;
+
+  /* 애니메이션 */
+  --animate-shimmer: shimmer 1.6s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 여기부터는 진짜 "전역" 스타일만 */
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
