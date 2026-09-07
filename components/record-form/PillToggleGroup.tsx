@@ -42,7 +42,6 @@ export function PillToggleGroup({
   }
 
   function handleMultiChange(optionValue: string, checked: boolean) {
-    if (checked) console.log(optionValue);
     onChange(checked ? [...value, optionValue] : value.filter((v) => v !== optionValue));
   }
 
