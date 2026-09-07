@@ -15,3 +15,18 @@ export type ArchiveRecord = {
   movieId: string;
   tags: Tag[];
 };
+
+
+
+export type WatchRecord = {
+  id: string;
+  movieId: string;
+  status: string;
+  watchedFrom: string;
+  companions: string[];
+  locations: string[];
+  tags: Tag[];
+  note?: string;
+  rewatchIntent?: string;
+};
+
