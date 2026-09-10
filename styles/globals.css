@@ -22,6 +22,8 @@
   --color-line-soft: #e6dfce;
   --color-warn: #8a6d3b;
   /* --danger (중단 상태 등 오커색) */
+  --color-info: #4f6d85;
+  /* 재관람 상태 등 청색 계열 */
 
   /* 폰트 */
   --font-sans: var(--font-pretendard), sans-serif;

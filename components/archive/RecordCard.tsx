@@ -4,6 +4,8 @@ import { useState } from "react";
 import { PosterThumb } from "@/components/shared/PosterThumb";
 import { TagPill } from "@/components/shared/TagPill";
 import { type Movie, type WatchRecord } from "@/lib/types";
+import { CARD_SHELL_CLASS } from "@/lib/styles";
+import { WATCH_STATUS_LABEL, WATCH_STATUS_TONE } from "@/lib/constants";
 
 interface RecordCardProps {
   record: WatchRecord;
@@ -15,7 +17,7 @@ interface RecordCardProps {
 
 export function RecordCard({ record, movie, onOpenDetail, onEdit, onDelete }: RecordCardProps) {
   return (
-    <div className="max-w-[360px] relative rounded-2xl border border-line bg-card p-5 shadow-[0_2px_10px_rgba(27,26,23,0.05)] transition-all hover:-translate-y-0.5 hover:border-ink-faint">
+    <div className={`${CARD_SHELL_CLASS} border-line relative hover:-translate-y-0.5 hover:border-ink-faint bg-card`}>
       <CardMenu onEdit={onEdit} onDelete={onDelete} />
       <div className="flex flex-col gap-3.5">
         <button
@@ -33,7 +35,7 @@ export function RecordCard({ record, movie, onOpenDetail, onEdit, onDelete }: Re
         <div className="min-w-0 flex-1">
           <div className="mb-3.5 flex items-center justify-between gap-2.5">
             <h3 className="text-[17px] font-bold leading-snug">{movie.title}</h3>
-            <TagPill label={record.status} tone="accent" />
+            <TagPill label={WATCH_STATUS_LABEL[record.status]} tone={WATCH_STATUS_TONE[record.status]} />
           </div>
 
           <div className="mb-3.5 flex flex-wrap items-center gap-1 border-b border-dashed border-line pb-3.5 text-xs text-ink-soft">

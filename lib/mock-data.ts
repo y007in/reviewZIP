@@ -24,7 +24,7 @@ export const mockWatchRecords: WatchRecord[] = [
   {
     id: "r1",
     movieId: "m1",
-    status: "최초관람",
+    status: "watched",
     watchedFrom: "2024.05.02",
     companions: ["민지"],
     locations: ["CGV 강남"],
@@ -35,7 +35,7 @@ export const mockWatchRecords: WatchRecord[] = [
   {
     id: "r2",
     movieId: "m2",
-    status: "최초관람",
+    status: "dropped",
     watchedFrom: "2024.01.20",
     companions: [],
     locations: ["집"],
@@ -46,7 +46,7 @@ export const mockWatchRecords: WatchRecord[] = [
   {
     id: "r3",
     movieId: "m3",
-    status: "최초관람",
+    status: "watched",
     watchedFrom: "2024.06.14",
     companions: ["재현", "소율"],
     locations: ["롯데시네마 월드타워"],
@@ -56,7 +56,7 @@ export const mockWatchRecords: WatchRecord[] = [
   {
     id: "r4",
     movieId: "m3",
-    status: "재관람",
+    status: "watched",
     watchedFrom: "2024.07.03",
     companions: [],
     locations: ["집"],
@@ -67,7 +67,7 @@ export const mockWatchRecords: WatchRecord[] = [
   {
     id: "r5",
     movieId: "m4",
-    status: "최초관람",
+    status: "watched",
     watchedFrom: "2024.02.11",
     companions: ["가족"],
     locations: ["메가박스 코엑스"],
@@ -78,7 +78,7 @@ export const mockWatchRecords: WatchRecord[] = [
   {
     id: "r6",
     movieId: "m5",
-    status: "최초관람",
+    status: "rewatched",
     watchedFrom: "2024.03.15",
     companions: ["민지", "재현"],
     locations: ["CGV 용산아이파크몰"],
@@ -89,7 +89,7 @@ export const mockWatchRecords: WatchRecord[] = [
   {
     id: "r7",
     movieId: "m6",
-    status: "최초관람",
+    status: "watched",
     watchedFrom: "2024.04.27",
     companions: [],
     locations: ["왓챠"],

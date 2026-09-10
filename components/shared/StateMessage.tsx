@@ -4,7 +4,7 @@ import { Button } from "./Button";
 export type StateTone = "neutral" | "error";
 
 interface StateMessageProps {
-    icon: ReactNode;
+    icon?: ReactNode;
     title: string;
     description?: ReactNode;
     action?: () => void;
