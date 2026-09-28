@@ -30,7 +30,7 @@ export function StateMessage({
         `mb-5 flex items-center justify-center rounded-full border ${ICON_WRAP_CLASS[tone]}`.trim();
 
     return (
-        <div className="max-w-[416px] min-w-[240px] flex flex-col items-center gap-1 px-[20px] py-[40px] text-center text-ink-soft border border-dashed border-line rounded-2xl">
+        <div className="max-w-[416px] min-w-[240px] flex flex-col items-center gap-1 px-[20px] py-[40px] text-center text-ink-soft border border-dashed border-line rounded-2xl bg-card">
             <div className={iconWrapClasses}>{icon}</div>
             <p className="text-[16px] font-bold text-ink">{title}</p>
             {description && (

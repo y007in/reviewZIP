@@ -53,8 +53,8 @@ export function RecordList({ records, movieById, statusFilter, onSelectStatus }:
   return (
     <>
       {hasAnyRecords && (
-        <div className="col-span-full flex flex-wrap items-center justify-between gap-2">
-          <div className="flex flex-wrap gap-2">
+        <div className="col-span-full flex min-w-0 flex-col-reverse items-start gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+          <div className="flex w-full min-w-0 flex-nowrap gap-2 overflow-x-auto sm:w-auto sm:flex-wrap sm:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {STATUS_OPTIONS.map((s) => {
               const tone = s === ALL_STATUS ? "neutral" : WATCH_STATUS_TONE[s];
               return (
@@ -63,7 +63,7 @@ export function RecordList({ records, movieById, statusFilter, onSelectStatus }:
                   type="button"
                   onClick={() => onSelectStatus(s)}
                   aria-pressed={statusFilter === s}
-                  className={`rounded-full border px-4 py-1.5 text-[14px] font-semibold transition-colors ${statusFilter === s
+                  className={`shrink-0 rounded-full border px-4 py-1.5 text-[14px] font-semibold transition-colors ${statusFilter === s
                     ? TONE_CLASS[tone]
                     : "border-line bg-card text-ink-soft hover:border-ink-faint"
                     }`}
@@ -76,7 +76,7 @@ export function RecordList({ records, movieById, statusFilter, onSelectStatus }:
           <select
             value={sortOption}
             onChange={(e) => setSortOption(e.target.value as SortOption)}
-            className="border-none p-1 text-[14px] font-semibold text-ink-soft outline-none cursor-pointer"
+            className="self-end border-none p-1 text-[14px] font-semibold text-ink-soft outline-none cursor-pointer sm:self-auto"
           >
             {SORT_OPTIONS.map((option) => (
               <option key={option} value={option}>
