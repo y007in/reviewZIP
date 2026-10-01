@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { CARD_SHELL_CLASS } from "@/lib/styles";
 import type { PillTone } from "@/components/shared/TagPill";
 import {
@@ -49,13 +49,12 @@ export function RingMeter({
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
 
-  const [animatedPercent, setAnimatedPercent] = useState(0);
+  // const [animatedPercent, setAnimatedPercent] = useState(0);
+  // useEffect(() => {
+  //   setAnimatedPercent(percent);
+  // }, [percent]);
 
-  useEffect(() => {
-    setAnimatedPercent(percent);
-  }, [percent]);
-
-  const dashOffset = circumference - (animatedPercent / 100) * circumference;
+  const dashOffset = circumference - (percent / 100) * circumference;
 
   return (
     <button
