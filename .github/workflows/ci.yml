@@ -1,10 +1,11 @@
 name: CI
 
 on:
-push:
+  push:
     branches: [develop]
- pull_request:
+  pull_request:
     branches: [main, develop]
+
 
 jobs:
   lint-and-build:
