@@ -9,6 +9,7 @@ on:
 
 jobs:
   lint-and-build:
+    name: lint and build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
