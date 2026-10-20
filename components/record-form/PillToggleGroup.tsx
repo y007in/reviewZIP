@@ -9,10 +9,10 @@ export interface PillOption {
 
 interface PillToggleGroupProps {
   options: PillOption[];
-  label: string,
-  mode?: "single" | "multi"
+  mode?: "single" | "multi";
   value: string[];
   onChange: (next: string[]) => void;
+  labelledBy?: string;
   name?: string;
   className?: string;
 }
@@ -26,16 +26,15 @@ const PILL_LABEL_CLASS =
 
 export function PillToggleGroup({
   options,
-  label,
   mode = "single",
   value,
   onChange,
+  labelledBy,
   name,
   className,
 }: PillToggleGroupProps) {
   const autoId = useId();
   const groupName = name ?? autoId;
-  console.log(mode != 'single' && groupName);
 
   function handleSingleChange(optionValue: string) {
     onChange([optionValue]);
@@ -48,39 +47,37 @@ export function PillToggleGroup({
   const groupClasses = `flex flex-wrap gap-2 ${className ?? ""}`.trim();
 
   return (
-    <>
-      <div className="mb-2.5 flex items-baseline gap-2 text-[16px] font-bold" >
-        {label}
+    <div
+      className={groupClasses}
+      role={mode === "single" ? "radiogroup" : "group"}
+      aria-labelledby={labelledBy}
+    >
+      {options.map((opt) => {
+        const inputId = `${groupName}-${opt.value}`;
+        const checked = value.includes(opt.value);
 
-      </div>
-      <div className={groupClasses} role={mode === "single" ? "radiogroup" : "group"}>
-        {options.map((opt) => {
-          const inputId = `${groupName}-${opt.value}`;
-          const checked = value.includes(opt.value);
 
-
-          return (
-            <div key={opt.value}>
-              <input
-                type={mode === "single" ? "radio" : "checkbox"}
-                id={inputId}
-                name={mode === "single" ? groupName : undefined}
-                value={opt.value}
-                checked={checked}
-                onChange={(e) =>
-                  mode === "single"
-                    ? handleSingleChange(opt.value)
-                    : handleMultiChange(opt.value, e.target.checked)
-                }
-                className="peer sr-only"
-              />
-              <label htmlFor={inputId} className={PILL_LABEL_CLASS}>
-                {opt.label}
-              </label>
-            </div>
-          );
-        })}
-      </div>
-    </>
+        return (
+          <div key={opt.value}>
+            <input
+              type={mode === "single" ? "radio" : "checkbox"}
+              id={inputId}
+              name={mode === "single" ? groupName : undefined}
+              value={opt.value}
+              checked={checked}
+              onChange={(e) =>
+                mode === "single"
+                  ? handleSingleChange(opt.value)
+                  : handleMultiChange(opt.value, e.target.checked)
+              }
+              className="peer sr-only"
+            />
+            <label htmlFor={inputId} className={PILL_LABEL_CLASS}>
+              {opt.label}
+            </label>
+          </div>
+        );
+      })}
+    </div>
   );
 }
