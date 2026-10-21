@@ -21,6 +21,7 @@ const DATE_INPUT_CLASS =
 
 export default function NewRecordPage() {
   const router = useRouter();
+  const [movie, setMovie] = useState<Movie | null>(null);
   const [status, setStatus] = useState<string[]>([]);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -36,7 +37,7 @@ export default function NewRecordPage() {
         <h1 className="text-[22px] font-extrabold text-ink">오늘 본 작품을 기록해보세요</h1>
       </div>
       <FormSection label="어떤 작품인가요?" require divider={false}>
-        <TitlePicker />
+        <TitlePicker value={movie} onSelect={setMovie} />
       </FormSection>
 
       <FormSection label="관람 상태" require labelId="status-label">

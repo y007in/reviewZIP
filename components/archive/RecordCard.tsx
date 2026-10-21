@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { PosterThumb } from "@/components/shared/PosterThumb";
+import PosterThumb from "@/components/shared/PosterThumb";
 import { TagPill } from "@/components/shared/TagPill";
 import { type Movie, type WatchRecord } from "@/lib/types";
 import { CARD_SHELL_CLASS } from "@/lib/styles";
