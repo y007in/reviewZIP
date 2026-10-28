@@ -16,7 +16,7 @@ const VARIANT_CLASS: Record<PosterVariant, string> = {
 };
 
 
-export function PosterThumb({
+export default function PosterThumb({
   posterPath,
   variant = "card",
   className,
