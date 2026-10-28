@@ -95,7 +95,7 @@ export default function NewRecordPage() {
       </FormSection>
 
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/90 backdrop-blur-md">
+      <div className="fixed inset-x-0 bottom-0 z-40 min-w-page-min border-t border-line bg-paper/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-page gap-3 px-6 py-4">
           <Button
             type="button"

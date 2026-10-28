@@ -33,8 +33,9 @@
   --radius-card: 14px;
   --radius-pill: 999px;
 
-  /* 레이아웃: 모든 페이지 최대 너비 (max-w-page) */
-  --container-page: 80rem; /* 1280px */
+  /* 레이아웃: 모든 페이지 최대·최소 너비 */
+  --container-page: 80rem; /* 1280px → max-w-page */
+  --container-page-min: 20rem; /* 320px → min-w-page-min */
 
   /* 애니메이션 */
   --animate-shimmer: shimmer 1.6s ease infinite;

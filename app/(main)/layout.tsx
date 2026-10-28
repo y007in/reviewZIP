@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ko"
       className={`${pretendard.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full min-w-page-min flex flex-col">
         {children}
       </body>
     </html>
