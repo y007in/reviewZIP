@@ -11,7 +11,7 @@ export default function ArchiveHomePage() {
   const hasAnyRecords = mockWatchRecords.length > 0;
 
   return (
-    <main className="mx-auto grid w-full max-w-6xl grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-5 p-6">
+    <main className="mx-auto grid w-full max-w-page grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-5 p-6">
       <div className="col-span-full flex flex-col items-start justify-between">
         <h1 className="text-[26px] font-bold text-ink">안녕하세요</h1>
         <h2 className="text-[16px] text-ink">

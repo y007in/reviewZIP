@@ -16,12 +16,12 @@ export default function TagCategoryGrid({ value, onChange }: TagCategoryGridProp
   }
 
   return (
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+    <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 ">
       {TAG_CATEGORIES.map((category) => {
         const categoryValues = category.options.map((o) => o.value);
         const titleId = `tag-${category.key}-label`;
         return (
-          <div key={category.key}>
+          <div key={category.key} className="whitespace-nowrap">
             <h3 id={titleId} className={CATEGORY_LABEL_CLASS}>
               {category.title}
             </h3>

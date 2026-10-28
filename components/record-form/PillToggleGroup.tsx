@@ -58,7 +58,7 @@ export function PillToggleGroup({
 
 
         return (
-          <div key={opt.value}>
+          <div key={opt.value} className="relative">
             <input
               type={mode === "single" ? "radio" : "checkbox"}
               id={inputId}

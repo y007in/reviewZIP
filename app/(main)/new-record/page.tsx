@@ -32,7 +32,7 @@ export default function NewRecordPage() {
   const [note, setNote] = useState("");
 
   return (
-    <main className="mx-auto grid w-full max-w-6xl px-6 py-8 pb-32">
+    <main className="mx-auto grid w-full max-w-page grid-cols-1 px-6 py-8 pb-32">
       <div className="mb-7">
         <h1 className="text-[22px] font-extrabold text-ink">오늘 본 작품을 기록해보세요</h1>
       </div>
@@ -46,7 +46,7 @@ export default function NewRecordPage() {
 
       <FormSection label="언제 관람하셨나요?" require>
         <div className="flex gap-3.5">
-          <div className="flex-1">
+          <div className="min-w-0 flex-1">
             <label htmlFor="start-date" className={DATE_LABEL_CLASS}>시작일</label>
             <input
               id="start-date"
@@ -56,7 +56,7 @@ export default function NewRecordPage() {
               className={DATE_INPUT_CLASS}
             />
           </div>
-          <div className="flex-1">
+          <div className="min-w-0 flex-1">
             <label htmlFor="end-date" className={DATE_LABEL_CLASS}>종료일</label>
             <input
               id="end-date"
@@ -88,16 +88,15 @@ export default function NewRecordPage() {
       <FormSection label="한줄평">
         <textarea
           value={note}
-          onChange={(e) => setNote(e.target.value.slice(0, 200))}
+          onChange={(e) => setNote(e.target.value)}
           placeholder="이 작품에 대한 짧은 감상을 남겨보세요."
-          className="w-full resize-y rounded-xl border-[1.3px] border-line bg-card px-4 py-3.5 text-[14px] leading-relaxed text-ink outline-none focus:border-accent"
+          className="w-full h-50 resize-y rounded-xl border-[1.3px] border-line bg-card px-4 py-3.5 text-[14px] leading-relaxed text-ink outline-none focus:border-accent"
         />
-        <p className="mt-1.5 text-right font-mono text-[11.5px] text-ink-faint">{note.length} / 200</p>
       </FormSection>
 
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/90 backdrop-blur-md">
-        <div className=" mx-auto flex  gap-3 px-6 py-4">
+        <div className="mx-auto flex max-w-page gap-3 px-6 py-4">
           <Button
             type="button"
             variant="ghost"

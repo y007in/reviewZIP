@@ -47,7 +47,7 @@ export default function TitlePicker({ value, onSelect }: TitlePickerProps) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="영화나 드라마 제목을 검색해보세요"
-          className="flex-1 border-none bg-transparent text-[15px] font-semibold text-ink outline-none placeholder:font-medium placeholder:text-ink-faint"
+          className="min-w-0 flex-1 border-none bg-transparent text-[15px] font-semibold text-ink outline-none placeholder:font-medium placeholder:text-ink-faint"
         />
       </div>
       {/* 2. 검색중*/}
